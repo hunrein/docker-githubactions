@@ -27,5 +27,10 @@ jobs:
         docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
         echo "Login finished"
         
-    # - name: Build the Docker image
-    #   run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+    - name: Build the Docker image
+      run: |
+        docker build -t hunrein/docker-githubactions:0.0.2 .
+    
+    - name: Push Docker Image
+      run: |
+        docker push hunrein/docker-githubactions:0.0.2
