@@ -30,7 +30,9 @@ jobs:
     - name: Build the Docker image
       run: |
         docker build -t hunrein/docker-githubactions:0.0.2 .
+        docker build -t hunrein/docker-githubactions:latest .
     
     - name: Push Docker Image
       run: |
         docker push hunrein/docker-githubactions:0.0.2
+        docker push hunrein/docker-githubactions:latest
